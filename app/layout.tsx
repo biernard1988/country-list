@@ -7,7 +7,8 @@ const nunitoSans = Nunito_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Country List",
-  description: "Country List project for study purposes using Next.js and Tailwind CSS",
+  description:
+    "Country List project for study purposes using Next.js and Tailwind CSS",
 };
 
 export default function RootLayout({
@@ -25,7 +26,7 @@ export default function RootLayout({
               <h1 className="font-bold text-2xl ">Country List</h1>
             </section>
           </nav>
-        {children}
+          {children}
         </main>
       </body>
     </html>
