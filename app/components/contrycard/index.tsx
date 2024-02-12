@@ -13,7 +13,7 @@ export default function CountryCard({
   return (
     <Link href={`/country/${name}`}>
       <article
-        className="h-64 min-w-full p-2 m-3 bg-gray-500 rounded-lg"
+        className="h-64 min-w-full p-2 my-3 bg-gray-500 hover:border transition-all rounded-lg"
         key={name}
       >
         <div className="h-40 p-2 overflow-hidden rounded-xl relative">

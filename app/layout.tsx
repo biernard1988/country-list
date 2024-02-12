@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import { Globe2 } from "lucide-react";
+import Link from "next/link";
 
 const nunitoSans = Nunito_Sans({ subsets: ["latin"] });
 
@@ -22,7 +23,12 @@ export default function RootLayout({
         <main className="bg-gray-700 min-h-screen text-white flex flex-col items-center">
           <nav className="w-full bg-gray-600 h-16 flex items-center justify-center">
             <section className="container flex items-center gap-2">
-              <Globe2 size={35} />
+              <Link href="/">
+                <Globe2
+                  size={35}
+                  className=" hover:text-slate-800 transition-colors"
+                />
+              </Link>
               <h1 className="font-bold text-2xl ">Country List</h1>
             </section>
           </nav>

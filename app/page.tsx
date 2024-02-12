@@ -1,10 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
 import CountryCard from "./components/contrycard";
 
 export type Country = {
   name: {
     common: string;
+    official: string;
   };
   flags: {
     svg: string;
