@@ -2,14 +2,7 @@ import type { Country } from "@/app/page";
 import { CornerUpLeft, Home, Globe, Users, Speech } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import CountryCard from "@/app/components/contrycard";
-
-/* async function getCountryByName(name: string): Promise<Country> {
-  const response = await fetch(
-    `https://restcountries.com/v3.1/name/${name}?fullText=true`
-  );
-  return (await response.json())[0];
-} */
+import CountryCard from "@/app/components/country-card";
 
 async function getCountryByName(name: string): Promise<Country> {
   const response = await fetch("https://restcountries.com/v3.1/all");
@@ -18,7 +11,7 @@ async function getCountryByName(name: string): Promise<Country> {
   return countries.find((country: Country) => country.name.common === name)!;
 }
 
-async function getCountryBorderByName(name: string) {
+async function getCountryBordersByName(name: string) {
   const response = await fetch("https://restcountries.com/v3.1/all");
   const countries: Country[] = await response.json();
 
@@ -27,14 +20,12 @@ async function getCountryBorderByName(name: string) {
   )!;
 
   return country.borders?.map((border) => {
-    const borderCountry = countries.find((country) => country.cca3 === border);
-    if (borderCountry) {
-      return {
-        name: borderCountry.name.common,
-        flag: borderCountry.flags.svg,
-        flagAlt: borderCountry.flags.alt,
-      };
-    }
+    const borderCountry = countries.find((country) => country.cca3 === border)!;
+    return {
+      name: borderCountry.name.common,
+      flag: borderCountry.flags.svg,
+      flagAlt: borderCountry.flags.alt,
+    };
   });
 }
 
@@ -44,9 +35,9 @@ export default async function CountryPage({
   params: { name: string };
 }) {
   const country = await getCountryByName(decodeURI(name));
-  const borderCountries = await getCountryBorderByName(decodeURI(name));
+  const borderCountries = await getCountryBordersByName(decodeURI(name));
 
-  const formatter = new Intl.NumberFormat("en", {
+  const formatter = Intl.NumberFormat("en", {
     notation: "compact",
   });
 
@@ -120,9 +111,10 @@ export default async function CountryPage({
           Bordering Countries
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 m-3 w-full place-content-center">
-          {borderCountries?.map((border) => (
-            <CountryCard key={border.name} {...border} />
-          ))}
+          {borderCountries &&
+            borderCountries.map((border) => (
+              <CountryCard key={border.name} {...border} />
+            ))}
         </div>
       </section>
     </section>
