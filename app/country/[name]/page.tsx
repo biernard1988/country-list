@@ -96,18 +96,19 @@ export default async function CountryPage({
               )}
             </div>
           </section>
-          <div className="relative h-60 w-96 mb-5 shadow-lg md:order-last order-first">
+          <div className="mb-5 shadow-lg md:order-last order-first">
             <Image
               src={country.flags.svg}
               alt={country.flags.alt}
               className="object-cover"
-              fill
+              width={500}
+              height={560}
             />
           </div>
         </article>
       </div>
       <section className="flex flex-col justify-center items-center">
-        <h3 className="my-12 text-2xl text-center font-semibold">
+        <h3 className="my-12 text-2xl lg:text-3xl text-center font-semibold">
           Bordering Countries
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 w-full">
