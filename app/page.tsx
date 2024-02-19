@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import CountryCard from "./components/country-card";
 
-interface Country {
+export type Country = {
   name: {
     common: string;
     official: string;
@@ -11,7 +11,16 @@ interface Country {
     svg: string;
     alt: string;
   };
-}
+  capital: string;
+  region: string;
+  subregion: string;
+  population: number;
+  languages?: {
+    [key: string]: string;
+  };
+  borders?: string[];
+  cca3: string;
+};
 
 async function getCountries(): Promise<Country[]> {
   const response = await fetch("https://restcountries.com/v3.1/all");
