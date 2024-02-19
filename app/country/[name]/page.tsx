@@ -42,19 +42,19 @@ export default async function CountryPage({
   });
 
   return (
-    <section className="flex flex-col container mx-auto">
-      <h1 className="text-5xl text-center font-bold my-16">
+    <section className="flex flex-col container mb-3">
+      <h1 className="text-3xl lg:text-5xl text-center font-bold my-16">
         {country.name.official}
       </h1>
 
       <div className="xl:flex xl:justify-center">
         <Link
           href="/"
-          className="flex items-center gap-2 py-2 text-gray-400 hover:text-white transition-colors xl:flex-col xl:mr-2"
+          className="flex items-center gap-2 py-2 ml-3 text-gray-400 hover:text-white transition-colors xl:flex-col xl:mr-2"
         >
           <CornerUpLeft size={20} /> Back
         </Link>
-        <article className="flex md:flex-row flex-col justify-between items-center xl:justify-evenly xl:w-3/5 p-10 bg-gray-500 rounded-xl">
+        <article className="flex md:flex-row flex-col justify-between items-center xl:justify-evenly xl:w-3/5 p-8 bg-gray-500 mx-4 rounded-xl">
           <section className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
               <Home size={20} />
@@ -107,10 +107,10 @@ export default async function CountryPage({
         </article>
       </div>
       <section className="flex flex-col justify-center items-center">
-        <h3 className="mt-12 text-2xl text-center font-semibold">
+        <h3 className="my-12 text-2xl text-center font-semibold">
           Bordering Countries
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 m-3 w-full place-content-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 w-full">
           {borderCountries &&
             borderCountries.map((border) => (
               <CountryCard key={border.name} {...border} />

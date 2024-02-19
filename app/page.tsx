@@ -64,7 +64,7 @@ const Home: React.FC = () => {
   return (
     <div className="flex flex-col items-center w-full">
       <input
-        className="text-black p-3 my-3 outline-0 rounded-lg"
+        className="text-black p-3 mt-10 outline-0 rounded-lg"
         type="search"
         placeholder="Search countries..."
         value={searchTerm}
