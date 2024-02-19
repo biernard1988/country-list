@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={nunitoSans.className}>
         <main className="bg-gray-700 min-h-screen text-white flex flex-col items-center">
           <nav className="w-full bg-gray-600 h-16 flex items-center justify-center">
-            <section className="container flex items-center gap-2">
+            <section className="container ml-3 flex items-center gap-2">
               <Link href="/">
                 <Globe2
                   size={35}
