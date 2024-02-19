@@ -109,17 +109,18 @@ export default async function CountryPage({
           </div>
         </article>
       </div>
-      <section className="flex flex-col justify-center items-center">
-        <h3 className="my-12 text-2xl lg:text-3xl text-center font-semibold">
-          Bordering Countries
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 w-full">
-          {borderCountries &&
-            borderCountries.map((border) => (
+      {borderCountries && borderCountries.length > 0 && (
+        <section className="flex flex-col justify-center items-center">
+          <h3 className="my-12 text-2xl lg:text-3xl text-center font-semibold">
+            Bordering Countries
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 w-full">
+            {borderCountries.map((border) => (
               <CountryCard key={border.name} {...border} />
             ))}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
     </section>
   );
 }
