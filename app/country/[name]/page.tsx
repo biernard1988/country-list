@@ -79,7 +79,9 @@ export default async function CountryPage({
               </h2>
             </div>
             <div className="flex gap-2">
-              <Speech size={20} />
+              <div className="mt-1">
+                <Speech size={20} />
+              </div>
               {country.languages && (
                 <h2>
                   <b className="text-lg">Languages:</b>
