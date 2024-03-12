@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Country List App
 
-## Getting Started
+---------------------------------------
+Description
 
-First, run the development server:
+Discover a world of countries with this React application! Explore a comprehensive list of countries with their flags and names, and easily search for specific countries using a user-friendly search bar.
 
-```bash
+---------------------------------------
+Features
+
+Fetches country data from the REST Countries API
+Displays country flags and names in a visual grid
+Offers a responsive layout that adapts to different screen sizes
+Filters countries based on user-entered search terms
+Provides a debounced search for efficient filtering
+Optimizes user experience with type-ahead style functionality
+
+---------------------------------------
+Installation
+
+Clone this repository:
+Bash
+git clone https://github.com/[your-username]/countries-app.git
+Use code with caution.
+Navigate to the project directory:
+Bash
+cd countries-app
+Use code with caution.
+Install dependencies:
+Bash
+npm install
+
+Use code with caution.
+
+--------------------------------------
+Usage
+
+Start the development server:
+Bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Use code with caution.
+Visit http://localhost:3000 in your browser.
+Start typing in the search bar to filter countries.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-------------------------------------
+Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+React
+REST Countries API
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+-------------------------------------
+License
 
-## Learn More
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-To learn more about Next.js, take a look at the following resources:
+-------------------------------------
+Authors
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Bernard Almeida da Costa: https://github.com/biernard1988
