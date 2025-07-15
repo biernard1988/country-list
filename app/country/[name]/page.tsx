@@ -2,7 +2,7 @@ import type { Country } from "@/app/page"
 import { CornerUpLeft, Home, Globe, Users, Speech } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import CountryCard from "@/app/components/country-card"
+/* import CountryCard from "@/app/components/country-card" */
 
 async function getCountryByName(name: string): Promise<Country> {
   const response = await fetch("https://restcountries.com/v3.1/name/eu")
@@ -29,12 +29,14 @@ async function getCountryByName(name: string): Promise<Country> {
   })
 } */
 
-export default async function CountryPage({
-  params: { name },
-}: {
-  params: { name: string }
-}) {
-  const country = await getCountryByName(decodeURI(name))
+type CountryPageProps = {
+  params: {
+    name: string
+  }
+}
+
+export default async function CountryPage({ params }: CountryPageProps) {
+  const country = await getCountryByName(decodeURI(params.name))
   /* const borderCountries = await getCountryBordersByName(decodeURI(name)) */
 
   const formatter = Intl.NumberFormat("en", {
