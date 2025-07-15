@@ -1,14 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
 export default function CountryCard({
   name,
   flag,
   flagAlt,
 }: {
-  name: string;
-  flag: string;
-  flagAlt: string;
+  name: string
+  flag: string
+  flagAlt: string
 }) {
   return (
     <Link href={`/country/${name}`}>
@@ -22,5 +22,5 @@ export default function CountryCard({
         <h1 className="mt-5 font-bold text-center">{name}</h1>
       </article>
     </Link>
-  );
+  )
 }

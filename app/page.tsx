@@ -24,7 +24,7 @@ export type Country = {
 
 async function getCountries(): Promise<Country[]> {
   try {
-    const response = await fetch("https://restcountries.com/v3.1/all")
+    const response = await fetch("https://restcountries.com/v3.1/name/eu")
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`)
     }
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
               key={index}
               name={country.name.common}
               flag={country.flags.svg}
-              flagAlt={country.flags.alt}
+              flagAlt={country.name.official}
             />
           ))}
         </section>
